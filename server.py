@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Server for multithreaded Chat application. """
+"""Server for Multitrådet Chatprogram. """
 
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
