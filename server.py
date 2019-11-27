@@ -13,7 +13,7 @@ HOST = ''
 PORT = 33000
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
-SERVER = socket(AF_NET, SOCK_STREAM)
+SERVER = socket(AF_INET, SOCK_STREAM)
 SERVER.bind(ADDR)
 
 
@@ -48,3 +48,14 @@ def brodcast(msg, prefix=""):
     """Brodscaster en besked til alle personerne """
     for sock in clients:
         sock.send(bytes(prefix, "utf8")+msg)
+
+
+if __name__ == "__main__":
+    SERVER.listen(5)
+    print("venter på forbindelse")
+    ACCEPT_THREAD = Thread(target=acceptIncommingConnections)
+    ACCEPT_THREAD.start()
+    ACCEPT_THREAD.join()
+    SERVER.close()
+    
+    
