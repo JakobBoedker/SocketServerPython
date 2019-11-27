@@ -27,4 +27,5 @@ def acceptIncommingConnections():
         Thread(target=handle_client, args=(client, )).start
 
 def handle_client(client): #Tager 'client' som et agument.
-    """Står for den  som et .
+    """Står for den  som et . """
+
